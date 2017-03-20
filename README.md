@@ -25,7 +25,7 @@ To Customise SRPopView for Different Themes -
 
   ![- `kSRColorSchemeDark`](http://imgur.com/pHJJLZ4)
   ![- `kSRColorSchemeLight`](http://imgur.com/3COxoRu)
-  ![- `kSRColorSchemeMatte`](http://imgur.com/nGDOwCB)
+  ![- `kSRColorSchemeMatte`](http://i.imgur.com/nGDOwCB.png)
   ![- `kSRColorSchemeBlack`](http://imgur.com/kxmhwHq)
 
  
