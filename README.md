@@ -5,7 +5,7 @@
 **SRPopview is a small and simple yet powerfull drag and drop complete solution for showing popview for lists and dropdown solution for iOS**
 SRpopview supports both **Portrait** and **Landscape** orientation
 
-![](https://image.ibb.co/grFbQa/ezgif_com_video_to_gif.gif)
+![](https://image.ibb.co/geJPBF/1lrwza.gif)
 
 
 ### Installation and Usage 
