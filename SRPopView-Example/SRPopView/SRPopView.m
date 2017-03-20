@@ -97,10 +97,12 @@
     popView.hasSearchBar            = self.shouldShowAutoSearchBar;
     popView.shouldShowBlurView      = self.shouldHaveBlurView;
     
+    
+    popView.headingText             = self.headingText;
+    
     [popView setupView];
     popView.delegate                = (id)self;
     popView.items                   = self.items;
-    popView.headingText             = self.headingText;
     
     [popView showViewAnimated];
 }
@@ -308,7 +310,9 @@
     self.tblSuperView.frame = CGRectMake(0, IS_IPAD?65:30, WIDTH, maxHeight);
     self.tblSuperView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, _tblSuperView.center.y);
     
-    self.lblHeader.frame = CGRectMake(0, 0, self.tblSuperView.bounds.size.width, [self getSizeOfLabel:self.headingText].height);
+    CGFloat height = [self getSizeOfLabel:self.headingText].height;
+    
+    self.lblHeader.frame = CGRectMake(0, 0, self.tblSuperView.bounds.size.width, height>35?height:35);
     self.lblHeader.numberOfLines = 0;
     self.lblHeader.lineBreakMode = NSLineBreakByWordWrapping;
     
@@ -620,9 +624,9 @@
 
 -(void)SR_ColorSchemeDark{
     
-    self.headerTextCol          = [UIColor whiteColor];
+    self.headerTextCol          = [UIColor blackColor];
     self.optionTextCol          = [UIColor whiteColor];
-    self.headerBackgroundColor  = [UIColor blackColor];
+    self.headerBackgroundColor  = [UIColor colorWithRed:231/255.0f green:46.0f/255 blue:72.0f/255 alpha:1.0];
     self.searchTextColor        = [UIColor blackColor];
     self.tblbackgroundColor     = [UIColor blackColor];
     self.selfBackgroundColor    = [[UIColor blackColor]colorWithAlphaComponent:0.6];
@@ -631,9 +635,9 @@
 }
 
 -(void)SR_ColorSchemeLight{
-    self.headerTextCol          = [UIColor blackColor];
+    self.headerTextCol          = [UIColor whiteColor];
     self.optionTextCol          = [UIColor blackColor];
-    self.headerBackgroundColor  = [UIColor grayColor];
+    self.headerBackgroundColor  = [UIColor colorWithRed:92.0f/255 green:76.0f/255 blue:70.0f/255 alpha:1.0];
     self.searchTextColor        = [UIColor blackColor];
     self.tblbackgroundColor     = [UIColor whiteColor];
     self.selfBackgroundColor    = [[UIColor whiteColor]colorWithAlphaComponent:0.6];
@@ -659,11 +663,11 @@
 }
 
 -(void)SR_ColorSchemeMatte{
-    self.headerTextCol          = [UIColor redColor];
+    self.headerTextCol          = [UIColor blackColor];
     self.optionTextCol          = [UIColor whiteColor];
-    self.headerBackgroundColor  = [UIColor blackColor];
+    self.headerBackgroundColor  = [UIColor grayColor];
     self.searchTextColor        = [UIColor blackColor];
-    self.tblbackgroundColor     = [UIColor blackColor];
+    self.tblbackgroundColor     = [UIColor darkGrayColor];
     self.selfBackgroundColor    = [[UIColor blackColor]colorWithAlphaComponent:0.6];
 }
 

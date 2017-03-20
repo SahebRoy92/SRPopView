@@ -41,7 +41,7 @@
     }
     
    
-    
+    [SRPopView sharedManager].currentColorScheme = kSRColorSchemeDark;
     autoSearch = NO;
 }
 

@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    settingsData = @[@{@"secname":@"Color Theme",@"rowdata":@[@"Dark",@"Light"]},
+    settingsData = @[@{@"secname":@"Color Theme",@"rowdata":@[@"Dark",@"Light",@"Matte",@"Bright",@"Black"]},
                      @{@"secname":@"Other Settings",@"rowdata":@[@"Blurview background",@"Auto Search"]}];
     
     currentSettings = [@[]mutableCopy];
@@ -31,8 +31,36 @@
     if([SRPopView sharedManager].shouldHaveBlurView){
          [currentSettings addObject:@"Blurview background"];
     }
-    
 
+
+
+
+    switch ([SRPopView sharedManager].currentColorScheme) {
+        case kSRColorSchemeDark:{
+            [currentSettings addObject:@"Dark"];
+            break;
+        }
+            
+        case kSRColorSchemeLight:{
+            [currentSettings addObject:@"Light"];
+            break;
+        }
+        case kSRColorSchemeBright:{
+            [currentSettings addObject:@"Bright"];
+            break;
+        }
+        case kSRColorSchemeMatte:{
+            [currentSettings addObject:@"Matte"];
+            break;
+        }
+        case kSRColorSchemeBlack:{
+            [currentSettings addObject:@"Black"];
+            break;
+        }
+        default:
+            break;
+    }
+    
     
     
 }
@@ -78,13 +106,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath   *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    if([currentSettings containsObject:cell.textLabel.text]){
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        [currentSettings removeObjectIdenticalTo:cell.textLabel.text];
+    if(indexPath.section == 0){
+        [currentSettings removeAllObjects];
+        [currentSettings addObject:cell.textLabel.text];
+        [tableView reloadData];
     }
     else {
-        [currentSettings addObject:cell.textLabel.text];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        if([currentSettings containsObject:cell.textLabel.text]){
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            [currentSettings removeObjectIdenticalTo:cell.textLabel.text];
+        }
+        else {
+            [currentSettings addObject:cell.textLabel.text];
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
     }
 }
 
@@ -100,7 +135,19 @@
     if([currentSettings containsObject:@"Light"]){
          [SRPopView sharedManager].currentColorScheme = kSRColorSchemeLight;
     }
-    
+
+    if([currentSettings containsObject:@"Bright"]){
+        [SRPopView sharedManager].currentColorScheme = kSRColorSchemeBright;
+    }
+
+    if([currentSettings containsObject:@"Matte"]){
+        [SRPopView sharedManager].currentColorScheme = kSRColorSchemeMatte;
+    }
+
+    if([currentSettings containsObject:@"Black"]){
+        [SRPopView sharedManager].currentColorScheme = kSRColorSchemeBlack;
+    }
+
     if([currentSettings containsObject:@"Blurview background"]){
         [SRPopView sharedManager].shouldHaveBlurView = YES;
     }
