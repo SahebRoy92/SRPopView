@@ -264,6 +264,10 @@
 -(void)configureForSearchBar{
     [self.searchView addSubview:self.searchBar];
     [self.tblSuperView addSubview:self.searchView];
+    
+    self.searchBar.placeholder = @"Search";
+    [self.searchBar addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+
 }
 
 
@@ -476,9 +480,7 @@
 -(void)textFieldDidChange:(UITextField *)textfield{
 
     if([textfield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0){
-        if(!predicate){
-            predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",textfield.text];
-        }
+        predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",textfield.text];
         self.items = [self.items filteredArrayUsingPredicate:predicate];
         [self.tblView reloadData];
     }else {

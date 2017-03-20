@@ -23,7 +23,16 @@
    
     settingsData = @[@{@"secname":@"Color Theme",@"rowdata":@[@"Dark",@"Light"]},
                      @{@"secname":@"Other Settings",@"rowdata":@[@"Blurview background",@"Auto Search"]}];
+    
     currentSettings = [@[]mutableCopy];
+    if([SRPopView sharedManager].shouldShowAutoSearchBar){
+        [currentSettings addObject:@"Auto Search"];
+    }
+    if([SRPopView sharedManager].shouldHaveBlurView){
+         [currentSettings addObject:@"Blurview background"];
+    }
+    
+
     
     
 }
@@ -51,6 +60,12 @@
     cell.textLabel.text = dictData[@"rowdata"][indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
     
+    if([currentSettings containsObject:dictData[@"rowdata"][indexPath.row]]){
+         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else{
+         cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
 }
 
