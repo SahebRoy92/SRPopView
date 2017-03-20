@@ -48,10 +48,10 @@ Too turn on ***Auto Search Option*** -
 
   * `+(void)showWithButton:(id)view andArray:(NSArray *)array andHeading:(NSString *)headingText andCallback:(itemPickedBlock)completionBlock`
 
-   - ***view*** - Sender on which SRPopview should open
-   - ***array*** - List of items as NSStrings
-   - ***headingText*** - Heading of SRPopview
-   - ***completiobBlock*** - Fires when user taps on any item, along with the selected Text.
+    - ***view*** - Sender on which SRPopview should open
+    - ***array*** - List of items as NSStrings
+    - ***headingText*** - Heading of SRPopview
+    - ***completiobBlock*** - Fires when user taps on any item, along with the selected Text.
 
   * `+(void)dismiss`
     ***To dismiss SRPopview***
