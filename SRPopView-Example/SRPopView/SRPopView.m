@@ -477,7 +477,7 @@
 
     if([textfield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0){
         if(!predicate){
-            predicate = [NSPredicate predicateWithFormat:@"SELF like %@",textfield.text];
+            predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",textfield.text];
         }
         self.items = [self.items filteredArrayUsingPredicate:predicate];
         [self.tblView reloadData];
