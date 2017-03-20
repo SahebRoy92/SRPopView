@@ -5,7 +5,7 @@
 **SRPopview is a small and simple yet powerfull drag and drop complete solution for showing popview for lists and dropdown solution for iOS**
 SRpopview supports both **Portrait** and **Landscape** orientation
 
-![](http://i.imgur.com/VBQWtZm.gif)
+![](http://i.imgur.com/VBQWtZm.gifv)
 
 
 ### Installation and Usage 
@@ -24,15 +24,19 @@ To Customise SRPopView for Different Themes -
 ### There are 4 In build themes currently - 
 
    - `kSRColorSchemeDark`
+   
   ![- `kSRColorSchemeDark`](http://i.imgur.com/pHJJLZ4.png)
   
   - `kSRColorSchemeLight`
+  
   ![- `kSRColorSchemeLight`](http://i.imgur.com/3COxoRu.png)
   
   - `kSRColorSchemeMatte`
+  
   ![- `kSRColorSchemeMatte`](http://i.imgur.com/nGDOwCB.png)
   
   - `kSRColorSchemeBlack`
+  
   ![- `kSRColorSchemeBlack`](http://i.imgur.com/kxmhwHq.png)
 
  
