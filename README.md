@@ -5,7 +5,7 @@
 **SRPopview is a small and simple yet powerfull drag and drop complete solution for showing popview for lists and dropdown solution for iOS**
 SRpopview supports both **Portrait** and **Landscape** orientation
 
-![](http://i.imgur.com/VBQWtZm.gifv)
+![](https://image.ibb.co/grFbQa/ezgif_com_video_to_gif.gif)
 
 
 ### Installation and Usage 
@@ -51,7 +51,8 @@ During Keyboard is up Tapping on anywhere will just hide the keyboard.
 Too turn on **Auto Search Option** - 
 
   `[SRPopView sharedManager].shouldShowAutoSearchBar = YES;`
-
+  
+![AutoSearch](http://i.imgur.com/wHTJAaP.png)
 
 ### SRPopView Methods Glossary 
 
