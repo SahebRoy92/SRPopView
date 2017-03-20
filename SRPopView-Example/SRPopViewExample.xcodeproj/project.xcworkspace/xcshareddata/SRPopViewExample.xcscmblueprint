@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3D9C18552E5D9CDD2923858013F1218D93437E48",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "945BED3B431F313770122E43E254728607E2F9CD" : 9223372036854775807,
+    "3D9C18552E5D9CDD2923858013F1218D93437E48" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5AE673C6-8405-480D-AF78-88D39A41BFC1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "945BED3B431F313770122E43E254728607E2F9CD" : "SRPopView%20Master\/SRPopView-Example\/SRPopView\/",
+    "3D9C18552E5D9CDD2923858013F1218D93437E48" : "SRPopView%20Master\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SRPopViewExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SRPopView-Example\/SRPopViewExample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SahebRoy92\/SRPopview.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3D9C18552E5D9CDD2923858013F1218D93437E48"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SahebRoy92\/SRPopView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "945BED3B431F313770122E43E254728607E2F9CD"
+    }
+  ]
+}

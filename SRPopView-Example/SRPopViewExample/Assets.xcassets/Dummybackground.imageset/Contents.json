@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "dragon_ball_z___hd_wallpaper_by_chaker_design-wallpaper-1920x1080-2.jpg",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "dragon_ball_z___hd_wallpaper_by_chaker_design-wallpaper-1920x1080-1.jpg",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "dragon_ball_z___hd_wallpaper_by_chaker_design-wallpaper-1920x1080.jpg",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
