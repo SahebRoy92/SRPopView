@@ -5,7 +5,7 @@
 SRPopview is a small and simple yet powerfull drag and drop complete solution for showing popview for lists and dropdown solution for iOS.
 
 
-![alt tag](http://url/to/img.png)
+![alt tag](http://imgur.com/QZ1jxmB)
 
 
 ### Installation and Usage 
