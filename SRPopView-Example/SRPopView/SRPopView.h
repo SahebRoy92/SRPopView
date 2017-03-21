@@ -57,5 +57,4 @@ typedef void (^itemPickedBlock)(NSString *itemPicked);
 -(void)dismissView;
 -(void)showViewAnimated;
 
-
 @end

@@ -124,7 +124,6 @@
 
 
 
-
 @end
 
 
@@ -333,6 +332,18 @@
 }
 
 
+#pragma mark - Orientation Change Notifications
+
+- (void)addOrientationChangeNotifications{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(orientationChanged) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)orientationChanged{
+    CGRect newFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    self.frame = newFrame;
+    [self rearrangeViews];
+}
+
 
 #pragma mark - Keyboard Notification Methods
 
@@ -371,6 +382,9 @@
 }
 
 
+
+
+
 -(float)calculateHowMuchViewNeedsToMoveUp:(float) keyboardHeight{
     float pointY = self.tblSuperView.frame.size.height + self.tblSuperView.frame.origin.y;
     float pointYfromBottom = self.bounds.size.height - pointY;
@@ -379,13 +393,6 @@
 }
 
 
-
-#pragma mark - Orientation Change Notifications 
-
-
-- (void)addOrientationChangeNotifications{
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(rearrangeViews) name:UIDeviceOrientationDidChangeNotification object:nil];
-}
 
 
 
