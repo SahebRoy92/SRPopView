@@ -79,3 +79,5 @@ Too turn on **Auto Search Option** -
 ### Reference 
 Refer to the example project for more customisation.
 
+###License 
+SRPopView is licensed under the MIT License.
