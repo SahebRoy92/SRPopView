@@ -1,0 +1,16 @@
+PODS:
+  - SRSwiftyPopView (0.1.0)
+
+DEPENDENCIES:
+  - SRSwiftyPopView (from `../`)
+
+EXTERNAL SOURCES:
+  SRSwiftyPopView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SRSwiftyPopView: aa3adab205678068a11bdd3273aa9a5bb56ebc1b
+
+PODFILE CHECKSUM: 0a2ce36f31c3e2957c1ff05dea3613e9fccfede8
+
+COCOAPODS: 1.5.0

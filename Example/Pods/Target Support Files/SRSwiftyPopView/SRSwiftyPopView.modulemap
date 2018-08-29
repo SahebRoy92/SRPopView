@@ -1,0 +1,6 @@
+framework module SRSwiftyPopView {
+  umbrella header "SRSwiftyPopView-umbrella.h"
+
+  export *
+  module * { export * }
+}

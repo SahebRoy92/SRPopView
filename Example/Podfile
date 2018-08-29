@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SRSwiftyPopView_Example' do
+  pod 'SRSwiftyPopView', :path => '../'
+
+  target 'SRSwiftyPopView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
