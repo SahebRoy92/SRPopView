@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7A20BD619D64FD0B7562F7BD /* Pods_SRSwiftyPopView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1741407D85B7F7D50348E6DA /* Pods_SRSwiftyPopView_Tests.framework */; };
+		C3915DE82136AA9700D06D6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3915DE72136AA9700D06D6F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		6C57329D18D6BD7584B251EB /* Pods-SRSwiftyPopView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRSwiftyPopView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SRSwiftyPopView_Tests/Pods-SRSwiftyPopView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7248DE3911CA7EEA112A4060 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A1D1B554BFC562A29622A252 /* Pods-SRSwiftyPopView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRSwiftyPopView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SRSwiftyPopView_Tests/Pods-SRSwiftyPopView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3915DE72136AA9700D06D6F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D4F3016F0B2E9DA8C37017E6 /* Pods-SRSwiftyPopView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRSwiftyPopView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SRSwiftyPopView_Example/Pods-SRSwiftyPopView_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				C3915DE72136AA9700D06D6F /* SettingsViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -325,6 +328,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C3915DE82136AA9700D06D6F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

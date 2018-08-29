@@ -16,6 +16,13 @@ public enum Result{
     case picked(String,Int)
 }
 
+
+public enum SRBlurEffect {
+    case vibrant
+    case dark
+    case none
+}
+
 public enum SRPopViewColorScheme{
     case dark
     case bright
@@ -26,27 +33,40 @@ public enum SRPopViewColorScheme{
     case firefly
 }
 
+
+
 public typealias SRPopviewCompletion = (Result)->Void
 
 public class SRPopview : NSObject{
     
     public static let shared = SRPopview()
+    
     internal(set) public var currentItems : Array<String>!
     private(set) public var originalItems : Array<String>!
     private(set) public var selectedItem = -1
-    public var currentColorScheme : SRPopViewColorScheme!
+    
     internal var comp : SRPopviewCompletion?
     internal var popView : SRSwiftyPopoverView!
-    private var autoSearch = false
-
     
-    public class func show(withValues array : Array<String>, autoSearch a : Bool = false,selectedIndex s : Int = 0,colorscheme cs : SRPopViewColorScheme = .dark, completion c : SRPopviewCompletion?){
+    public var autoSearch = false
+    public var blurBackground : SRBlurEffect = .none
+    public var heading : String = ""
+    public var currentColorScheme : SRPopViewColorScheme = .dark
+    public var showLog : Logging = .off {
+        didSet {
+            logging = showLog
+        }
+    }
+    
+    public class func show(withValues array : Array<String>, heading hText : String, autoSearch a : Bool = false,selectedIndex s : Int = 0,colorscheme cs : SRPopViewColorScheme = .dark, completion c : SRPopviewCompletion?){
         
         SRPopview.shared.currentItems            = array
         SRPopview.shared.originalItems           = array
         SRPopview.shared.selectedItem            = s
         SRPopview.shared.autoSearch              = a
         SRPopview.shared.currentColorScheme     = cs
+        SRPopview.shared.heading                 = hText
+        
         
         if let hasCompletion = c {
             SRPopview.shared.comp = hasCompletion
@@ -60,7 +80,8 @@ public class SRPopview : NSObject{
     }
     
     private func configure(){
-        popView = SRSwiftyPopoverView(withItems: currentItems, andSelectedItem: selectedItem, autoSearchbar: autoSearch)
+        
+        popView = SRSwiftyPopoverView.init(withItems: currentItems, andSelectedItem: selectedItem, headingText: heading, autoSearchbar: autoSearch, blurView: blurBackground)
         popView.translatesAutoresizingMaskIntoConstraints = false
         popView.alpha = 0.0
         popView.delegate = self
@@ -91,7 +112,7 @@ public class SRPopview : NSObject{
     private func cleanup(){
         popView.removeFromSuperview()
         popView = nil
-        print("Cleanup Done")
+        PLOG("Cleanup Done")
     }
 }
 
@@ -108,7 +129,7 @@ extension SRPopview : SRSwiftyPopviewDelegate{
     }
     
     func textFieldDidChange(_ str: String) {
-        print(str)
+        PLOG(str)
         // do predicate operations --- >>>
         if(str != ""){
             currentItems = originalItems.filter{

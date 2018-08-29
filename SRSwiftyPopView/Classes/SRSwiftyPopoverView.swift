@@ -26,6 +26,7 @@ class SRSwiftyPopoverView : UIView{
     private let screenSize = UIScreen.main.bounds
     public var allItems = [String]()
     internal(set) public var selectedIndex = -1
+    private var headingTitle = ""
     private(set) public var autoSearch = true
     private var actualheight : Double = 0.0
     fileprivate let cellHeight = UIDevice.current.userInterfaceIdiom == .pad ? 80.0 : 40.0
@@ -38,7 +39,7 @@ class SRSwiftyPopoverView : UIView{
     private var orientationActualHeight : CGFloat = 0.0
     private let tempConstantTopHeightLandscape = UIDevice.current.userInterfaceIdiom == .pad ? CGFloat(60) : CGFloat(20)
     private let screenSizeProportionHeight : CGFloat = 0.75
-    
+    private var blurViewDetails : SRBlurEffect?
     var keyboardcalls = 0
     
     
@@ -67,7 +68,7 @@ class SRSwiftyPopoverView : UIView{
     
     private lazy var textLabel : UILabel = {
         let lzyLabel = UILabel()
-        lzyLabel.text = "Heading --- qwieuhqwi ehqwueh wqiuehqwe hqwuie huiqwh eui"
+        lzyLabel.text = headingTitle
         lzyLabel.translatesAutoresizingMaskIntoConstraints = false
         lzyLabel.backgroundColor = UIColor.clear
         lzyLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -107,12 +108,22 @@ class SRSwiftyPopoverView : UIView{
     }()
     
     
+    private var blurView : UIVisualEffectView!
     
-    init(withItems items : [String], andSelectedItem index : Int = -1, autoSearchbar : Bool = false) {
+    
+    
+    
+    
+    
+    init(withItems items : [String], andSelectedItem index : Int = -1, headingText hText : String, autoSearchbar : Bool = false, blurView bView : SRBlurEffect?) {
+        
         super.init(frame: screenSize)
         allItems = items
         selectedIndex = index
         autoSearch = autoSearchbar
+        headingTitle = hText
+        blurViewDetails = bView
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -126,11 +137,11 @@ class SRSwiftyPopoverView : UIView{
         setupTablebviewConstraints()
         setupMainPopConstraints()
         addNotifications()
-        print("Done setting up !!")
+        PLOG("Done setting up")
     }
     
     deinit {
-        print("View getting deallocated ------ ")
+        PLOG("------ View getting deallocated ------ ")
     }
     
     private func addNotifications(){
@@ -167,7 +178,7 @@ class SRSwiftyPopoverView : UIView{
             tempConst.isActive = false
             
         }
-        print("===== ACTUAL HEIGHT == \(actualheight)")
+        PLOG("===== ACTUAL HEIGHT == \(actualheight)")
         self.layoutIfNeeded()
     }
     
@@ -177,7 +188,7 @@ class SRSwiftyPopoverView : UIView{
     @objc
     func keyboardDidAppear(_ notification: NSNotification){
         
-        print("Keyboard call : \(keyboardcalls)")
+        PLOG("Keyboard call : \(keyboardcalls)")
         keyboardcalls += 1
         
         if let userInfo = notification.userInfo {
@@ -228,6 +239,26 @@ class SRSwiftyPopoverView : UIView{
     
     private func setupLayerConstraints(){
         NSLayoutConstraint.addConstraintsFit(ToSuperview: self, andSubview: layerView)
+        if blurViewDetails != nil {
+            switch blurViewDetails! {
+            case .none:
+                PLOG("No effect")
+                self.layerView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4429134847)
+            case .vibrant:
+                let vibrant = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+                self.blurView =  UIVisualEffectView(effect: vibrant)
+                self.blurView.frame = layerView.bounds
+                NSLayoutConstraint.addConstraintsFit(ToSuperview: layerView, andSubview: self.blurView)
+                self.layerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+            case .dark:
+                let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+                self.blurView =  UIVisualEffectView(effect: darkBlur)
+                self.blurView.frame = layerView.bounds
+                NSLayoutConstraint.addConstraintsFit(ToSuperview: layerView, andSubview: self.blurView)
+                self.layerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+            }
+        }
+        
     }
     
     

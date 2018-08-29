@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'SRSwiftyPopView'
-    s.version          = '0.1.0'
+    s.version          = '1.0.0'
     s.summary          = 'The Swifty counterpart of SRPopView - a simple yet powerfull popover option that takes care of showing options and searching when nessasary.'
     
     # This description is used to generate tags and improve search results.
