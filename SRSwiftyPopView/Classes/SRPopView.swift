@@ -58,13 +58,22 @@ public class SRPopview : NSObject{
         }
     }
     
-    public class func show(withValues array : Array<String>, heading hText : String, autoSearch a : Bool = false,selectedIndex s : Int = 0,colorscheme cs : SRPopViewColorScheme = .dark, completion c : SRPopviewCompletion?){
+    
+    
+    
+    public class func show(withValues array : Array<String>, heading hText : String, autoSearch a : Bool? = nil ,selectedIndex s : Int = 0,colorscheme cs : SRPopViewColorScheme? = nil, completion c : SRPopviewCompletion?){
         
         SRPopview.shared.currentItems            = array
         SRPopview.shared.originalItems           = array
         SRPopview.shared.selectedItem            = s
-        SRPopview.shared.autoSearch              = a
-        SRPopview.shared.currentColorScheme     = cs
+        if let hasautoSearch = a {
+            SRPopview.shared.autoSearch           = hasautoSearch
+        }
+        
+        if let hasColorScheme = cs {
+            SRPopview.shared.currentColorScheme     = hasColorScheme
+        }
+        
         SRPopview.shared.heading                 = hText
         
         
@@ -73,6 +82,15 @@ public class SRPopview : NSObject{
         }
         SRPopview.shared.configure()
         
+    }
+
+    public func reloadData(){
+        popView.reloadValues()
+    }
+    
+    public func reloadDataWithUpdatedValues(_ updatedInputValues : [String]){
+        popView.allItems = updatedInputValues
+        popView.reloadValues()
     }
     
     public class func dismiss(){
@@ -85,6 +103,7 @@ public class SRPopview : NSObject{
         popView.translatesAutoresizingMaskIntoConstraints = false
         popView.alpha = 0.0
         popView.delegate = self
+        popView.configureColorScheme(self.currentColorScheme)
         popView.configure()
         self.showAnimated()
         
@@ -114,6 +133,9 @@ public class SRPopview : NSObject{
         popView = nil
         PLOG("Cleanup Done")
     }
+    
+    
+    
 }
 
 

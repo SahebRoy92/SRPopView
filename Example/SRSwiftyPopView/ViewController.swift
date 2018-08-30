@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func showAction(_ sender: Any) {
         
-        SRPopview.show(withValues: ["Abc","XYZ","123","789","Abc","XYZ","123","789","Abc","XYZ","123","789","Abc","XYZ","123","789"], heading: "Heading") { (result) in
+        SRPopview.show(withValues: ["Abc","XYZ","123","789","Abc","XYZ","123","789","Abc","XYZ","123","789","Abc","XYZ","123","789","Abc","XYZ","123","789"], heading: "SRSwiftyPopView Custom Heading") { (result) in
             switch result{
             case .notPicked():
                 print("Didnt pick any")
