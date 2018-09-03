@@ -484,7 +484,6 @@ class SRSwiftyPopoverView : UIView{
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.currentColorScheme.cellTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
     }
     
     func SR_BlackColorScheme(){
@@ -497,7 +496,6 @@ class SRSwiftyPopoverView : UIView{
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         self.currentColorScheme.cellTitleColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
     }
     
     func SR_BrightColorScheme(){
@@ -505,12 +503,11 @@ class SRSwiftyPopoverView : UIView{
         self.currentColorScheme.mainPopViewBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.currentColorScheme.topViewBackground = #colorLiteral(red: 0.3582857251, green: 0.298212558, blue: 0.2725927234, alpha: 1)
         self.currentColorScheme.textLabelTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.currentColorScheme.tableviewBackgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.currentColorScheme.tableviewBackgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         self.currentColorScheme.tableviewSeperatorColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.currentColorScheme.cellTitleColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        
     }
     
     func SR_MatteColorScheme(){
@@ -523,7 +520,6 @@ class SRSwiftyPopoverView : UIView{
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 0.8972397272, green: 0.8972397272, blue: 0.8972397272, alpha: 1)
         self.currentColorScheme.cellTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
     }
     
     
@@ -543,14 +539,13 @@ class SRSwiftyPopoverView : UIView{
     func SR_WestWorldColorScheme(){
         self.currentColorScheme.layerBackgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.44)
         self.currentColorScheme.mainPopViewBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.currentColorScheme.topViewBackground = #colorLiteral(red: 0.9130834028, green: 0.1184968682, blue: 0.07700429265, alpha: 1)
-        self.currentColorScheme.textLabelTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.currentColorScheme.tableviewBackgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.currentColorScheme.tableviewSeperatorColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.currentColorScheme.topViewBackground = #colorLiteral(red: 0.1690192564, green: 0.1825127594, blue: 0.2018118838, alpha: 1)
+        self.currentColorScheme.textLabelTextColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.currentColorScheme.tableviewBackgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        self.currentColorScheme.tableviewSeperatorColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.currentColorScheme.cellTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.currentColorScheme.cellTitleColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     func SR_FireFlyColorScheme(){
@@ -563,7 +558,6 @@ class SRSwiftyPopoverView : UIView{
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.currentColorScheme.cellTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
     }
     
     func SR_DynamicColorScheme(){
@@ -576,7 +570,6 @@ class SRSwiftyPopoverView : UIView{
         self.currentColorScheme.searchTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.currentColorScheme.searchBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.currentColorScheme.cellTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
     }
     
 }
